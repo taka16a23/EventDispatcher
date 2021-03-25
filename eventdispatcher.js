@@ -1,4 +1,4 @@
-class EventDispatcher {
+export default class EventDispatcher {
     constructor() {
         if(!!EventDispatcher.instance) {
             return EventDispatcher.instance;

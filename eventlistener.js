@@ -1,4 +1,4 @@
-class EventListener {
+export default class EventListener {
     can_dispatch_event(a_event) {
         return true;
     }
