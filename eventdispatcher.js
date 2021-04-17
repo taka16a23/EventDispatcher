@@ -12,12 +12,12 @@ export default class EventDispatcher {
     dispatch_event(a_event) {
         for(var i = 0; i < this._listeners.length; i++) {
             try {
-                if(this._listeners[i].can_dispatch_event(a_event) != true) {
+                if(this._listeners[i].can_dispatch_event(a_event) !== true) {
                     continue;
                 }
                 this._listeners[i].handle_event(this, a_event);
             } catch (ex) {
-                if(this._skip_error != true) {
+                if(this._skip_error !== true) {
                     throw ex;
                 }
             }
@@ -45,7 +45,7 @@ export default class EventDispatcher {
 
     remove_listener(a_listener) {
         var t_index = this._listeners.indexOf(a_listener);
-        if(t_index == -1) {
+        if(t_index === -1) {
             return this;
         }
         this._listeners.splice(t_index, 1);
@@ -54,7 +54,7 @@ export default class EventDispatcher {
 
     has_listener(a_listener) {
         var t_index = this._listeners.indexOf(a_listener);
-        if(t_index == -1) {
+        if(t_index === -1) {
             return false;
         }
         return true;
